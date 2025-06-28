@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="s" class="com.entity.Student">
+		<property name="stud_id" value="101"></property>
+		<property name="name" value="sahil"></property>
+		<property name="age" value="21"></property>
+		<property name="city" value="pune"></property>
+		<property name="college" ref="clg"></property>
+		<!--  we have to give ref='clg' here for connecting reference of another class instance-->
+						<!-- for achieving loose coupling -->
+	</bean>
+	
+	<bean id="clg" class="com.entity.College">
+		<property name="c_id" value="2"></property>
+		<property name="clg_name" value="JNU"></property>
+	</bean>
+
+	<!-- <bean class="com.entity.Student"> 
+		<constructor-arg index="0" value="102"></constructor-arg> 
+		<constructor-arg index="1" value="ram"></constructor-arg> <constructor-arg 
+		index="2" value="27"></constructor-arg> 
+		<constructor-arg index="3" value="goa"></constructor-arg> 
+		<constructor-arg index="4" ref="clg"></constructor-arg>
+		</bean>
+		
+		<bean id="clg" class="com.entity.College"> 
+			<constructor-arg index="0" value="1"></constructor-arg> 
+			<constructor-arg index="1" value="BHU"></constructor-arg>
+		</bean> -->
+
+</beans>
